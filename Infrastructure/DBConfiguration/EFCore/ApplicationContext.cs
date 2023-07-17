@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.DBConfiguration.EFCore
 {
-    internal class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         // Criando DatabaseContext sem Dependecy Injection
         public ApplicationContext(){}

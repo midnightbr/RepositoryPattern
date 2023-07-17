@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Domain.Entities.Interface;
 
 namespace Domain.Entities
 {
-    public class User
+    public class User : IIdentityEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -19,15 +20,14 @@ namespace Domain.Entities
          * Este tipo de abordagem é útil quando queremos tratar regras de negócio
          * para que alguma alteração ocorra no objeto de domínio
          */
-
         public User()
         {
-            _taskToDo = new Collection<TaskToDo>();
+            this._taskToDo = new Collection<TaskToDo>();
         }
 
-        public void AddItemToDo(TaskToDo todo)
+        public void AddItemToDo(TaskToDo taskToDo)
         {
-            _taskToDo.Add(todo);
+            _taskToDo.Add(taskToDo);
         }
     }
 }
