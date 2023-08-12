@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Interfaces.DBConfiguration
 {
-    public class IDatabaseFactory
+    public interface IDatabaseFactory
     {
         IDbConnection GetDbConnection { get; }
     }
